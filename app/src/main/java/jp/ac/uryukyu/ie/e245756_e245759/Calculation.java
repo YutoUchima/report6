@@ -1,8 +1,9 @@
-package jp.ac.uryukyu.ie.e245756;
+package jp.ac.uryukyu.ie.e245756_e245759;
 
 public class Calculation {
     public int getReward(String result){
-        switch (result) {
+        //役に応じて賭け金の倍率が上がる
+        switch (result) {   
             case "ワンペア":
                 return 1;
             case "ツーペア":
@@ -20,7 +21,5 @@ public class Calculation {
             default:
                 return 0;   
         }
-            
-        
     }
 }

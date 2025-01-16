@@ -1,10 +1,10 @@
-package jp.ac.uryukyu.ie.e245756;
+package jp.ac.uryukyu.ie.e245756_e245759;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class PorkerHands {
+public class CheckCards {
     public List<Integer> sortCards(List<Integer> hand){
         List<Integer> sortCards = new ArrayList<>(hand);
         Collections.sort(sortCards);
