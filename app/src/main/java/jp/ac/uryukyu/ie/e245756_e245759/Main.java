@@ -26,22 +26,20 @@ public class Main {
                     }
                 }
 
-                HandOutCards cards = new HandOutCards();  // Deckクラスのインスタンスを生成
+                HandOutCards cards = new HandOutCards();  // HandOutCardsクラスのインスタンスを生成
                 List<Integer> hand = cards.getRandomCards(5);  // 山札から5枚引く
 
-                CheckCards checkCards = new CheckCards();  // PokerHands クラスのインスタンスを作成
+                CheckCards checkCards = new CheckCards();  // CheckCards クラスのインスタンスを作成
                 List<Integer> sortedCards = checkCards.sortCards(hand);  // checkCards メソッドで手札を並び替える
                 System.out.println("手札: " + sortedCards);                
 
-                ReplaceCards swapCards = new ReplaceCards();  //カード入れ替えのメソッドをSwap_Cardsから呼び出す
-                swapCards.replaceCards(cards, sortedCards);
-
-                System.out.println("入れ替え後の手札: " + cards);   //checkCards メソッドで手札を入れ替える
-
+                ReplaceCards replaceCards = new ReplaceCards();  //カード入れ替えのメソッドをReplaceCardsから呼び出す
+                List<Integer> isReplaceCards = replaceCards.isReplaceCards(sortedCards); //交換するかどうかをまとめたリストの作成
+                replaceCards.replaceCards(cards, sortedCards, isReplaceCards);
                 List<Integer> sortedCards2 = checkCards.sortCards(sortedCards);  // checkCards メソッドで手札を並び替える
                 System.out.println("手札: " + sortedCards2);
 
-                String result = checkCards.checkCards(sortedCards);  // 役を判定
+                String result = checkCards.checkCards(sortedCards2);  // 役を判定
                 System.out.println("役: " + result);  
                 
                 Calculation calc = new Calculation();  // Calculation クラスのインスタンスを作成
@@ -51,7 +49,8 @@ public class Main {
                 if(result.equals("役なし")){
                     playerMoney -= bet;
                 }else{
-                    playerMoney += bet * magnification;
+                    playerMoney -= bet; //掛け金を所持金から消す
+                    playerMoney += bet * magnification;//報酬を所持金に追加する
                 }
                 System.out.println("掛け金: " + bet + " 円 X " + magnification + " 倍");
             }else{
