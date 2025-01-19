@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DoubleUp {  
-    private final Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
 
     public int doubleUp(int magnification){
         System.out.println("ダブルアップチャレンジに挑戦しますか？(1:はい/2:いいえ)");

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ReplaceCards {
     //カードを入れ替えるメソッド
-    private final Scanner scanner = new Scanner(System.in);//System.in=キーボードによる標準入力
+    private Scanner scanner = new Scanner(System.in);//System.in=キーボードによる標準入力
     
     public void replaceCards(HandOutCards cards, List<Integer> sotedCards){
         for (int i = 0; i < sotedCards.size(); i ++){ //リストの要素数以下の時iに+1をしていく
