@@ -21,7 +21,6 @@ public class HandOutCards {
         }
     }
 
-
     public List<Integer> getRandomCards(int drawCard){
         List<Integer> hand = new ArrayList<>();
         for (int i = 0; i < drawCard; i++) {
