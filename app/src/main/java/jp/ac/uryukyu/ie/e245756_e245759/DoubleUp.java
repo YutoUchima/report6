@@ -3,9 +3,24 @@ package jp.ac.uryukyu.ie.e245756_e245759;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+ * ダブルアップチャレンジを実装するクラス
+ * ダブルアップチャレンジに挑戦するかを聞く
+ * 掛け金の倍率計算
+ * 手札からどのカードをめくるかを選択する
+ */
 public class DoubleUp {  
+    /*
+     * スキャナーでの入力をクラス内で保持する
+     */
     private Scanner scanner = new Scanner(System.in);
 
+    /*
+     * ダブルアップチャレンジに挑戦するかどうか決め、倍率を計算してくれるメソッド
+     *
+     * @param magnification 一つ前の動作で揃った役の倍率
+     * @return チャレンジ後の倍率
+     */
     public int doubleUp(int magnification){
         System.out.println("ダブルアップチャレンジに挑戦しますか？(1:はい/2:いいえ)");
         int input = scanner.nextInt();
@@ -31,11 +46,16 @@ public class DoubleUp {
         return magnification;
     }
 
+    /*
+     * ダブルアップチャレンジで手札からどのカードをめくるかを決めるメソッド
+     *
+     * @param cards 新たに山札から引かれ、与えられた手札
+     * @return 選択したカードの位置(1~4)
+     */
     public int chooseCard(List<Integer> cards){
-        int cardnumber = -1; //絶対に使わない数字を入力
         while(true){
             System.out.println("どのカードをめくりますか？(1:1枚目, 2:2枚目, 3:3枚目, 4:4枚目)");
-            cardnumber = scanner.nextInt();
+            int cardnumber = scanner.nextInt();
             if(cardnumber == 1){
                 System.out.println(cards.get(1) + "が出た");
                 return 1;

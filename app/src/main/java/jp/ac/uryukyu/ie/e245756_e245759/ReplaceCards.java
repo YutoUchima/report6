@@ -3,10 +3,24 @@ package jp.ac.uryukyu.ie.e245756_e245759;
 import java.util.Scanner;
 import java.util.List;
 
+/*
+ * 手札を入れ替えるクラス
+ * HandOutCardsクラスで作成した山札から入れ替えるカードを引く
+ */
 public class ReplaceCards {
-    //カードを入れ替えるメソッド
+    /*
+     * スキャナーでの入力をクラス内で保持する
+     */
     private Scanner scanner = new Scanner(System.in);//System.in=キーボードによる標準入力
     
+    /*
+     * カードを一枚ずつ入れ替えるメソッド
+     * 入れ替えるかどうかを左から一枚ずつ聞いていく
+     *
+     * @param cards　HandOutCardsクラスで作成した山札
+     * @param sotedCards　プレイヤーに与えられた手札
+     *
+     */
     public void replaceCards(HandOutCards cards, List<Integer> sotedCards){
         for (int i = 0; i < sotedCards.size(); i ++){ //リストの要素数以下の時iに+1をしていく
             System.out.println(i+1 + "枚目:" + sotedCards.get(i));

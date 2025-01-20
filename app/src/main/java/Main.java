@@ -6,7 +6,19 @@ import jp.ac.uryukyu.ie.e245756_e245759.DoubleUp;
 import jp.ac.uryukyu.ie.e245756_e245759.HandOutCards;
 import jp.ac.uryukyu.ie.e245756_e245759.ReplaceCards;
 
+/*
+ * ポーカーゲームのメインクラス。
+ * プレイヤーが所持金を増やして目標金額に到達するまでゲームを進める。
+ * 手札の役を判定し、役に応じた報酬を与える。
+ * ダブルアップチャレンジに挑戦することで報酬を増やすことができる。
+ */
 public class Main {
+    /*
+     * メインメソッド
+     * ゲームを開始して、プレイヤーが目標金額をクリアするか、ゲームオーバーするまでゲームを続ける
+     * 
+     * @param args コマンドライン引数（未使用）。
+     */
     public static void main(String[] args) {
         int playerMoney = 1000;  // 初期金額（最初の所持金）
         int goalMoney = 5000;  // ゲームのクリア条件（目標金額）
